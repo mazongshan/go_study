@@ -16,7 +16,7 @@ func main(){
 		go func(){
 			total := 0
 			for{
-				key := rand.Intn(5)
+				key := rand.Intn(10)
 				mutex.Lock()
 				total += state[key]
 				mutex.Unlock()
@@ -29,7 +29,7 @@ func main(){
 	for w:=0;w<10;w++{
 		go func(){
 			for{
-				key := rand.Intn(5)
+				key := rand.Intn(10)
 				val := rand.Intn(100)
 				mutex.Lock()
 				state[key] = val

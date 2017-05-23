@@ -7,8 +7,8 @@ func main(){
 	c2 := make(chan string)
 
 	go func(){
-		time.Sleep(time.Second*1)
-		c1 <- "one"
+		time.Sleep(time.Second*3)
+		c1 <- "three"
 	}()
 
 	go func(){
@@ -22,6 +22,8 @@ func main(){
 				fmt.Println("received",msg1)
 			case msg2 := <- c2:
 				fmt.Println("received",msg2)
+		//	default:
+		//		fmt.Println("nothing received")
 		}
 	}
 
